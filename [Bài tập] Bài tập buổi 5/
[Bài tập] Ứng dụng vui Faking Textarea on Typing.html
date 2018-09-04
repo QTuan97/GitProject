@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<body onload="on()">
+<center><b>Typing anything slowly</b></center>
+<form name ="fake">
+<center><textarea name="txt" cols="30" rows="6"></textarea></center>
+</form>
+</body>
+</body>
+<script>
+    let box =["","B","Ạ","N"," ","Đ","Ã"," ","B","Ị"," ","L","Ừ","A","!"];
+    let n = "";
+    function faketext()
+    {
+        t=document.fake.txt.value;
+        j=t.length;
+        if(j>0)
+        {
+            for(let i=1;i<=j;i++)
+            {
+                n = n + box[i];
+                if(i == 15)
+                {
+                    document.fake.txt.value="";
+                    n=""
+                }
+            }
+        }
+        document.fake.txt.value=n;
+        n="";
+        setTimeout("faketext()",1);
+    }
+    function on()
+    {
+        faketext()
+    }
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="text" id="inputText"/>
+<button onclick="pushData();">Nhập từng phần tử</button>
+<button onclick="revData();">Đảo</button>
+<script>
+    let list = [];
+    function pushData(){
+        let inputText = document.getElementById('inputText').value;
+        list.push(inputText);
+    }
+    function revData(){
+        list.reverse();
+        alert(list);
+    }
+</script>
+
+</body>
+</html>

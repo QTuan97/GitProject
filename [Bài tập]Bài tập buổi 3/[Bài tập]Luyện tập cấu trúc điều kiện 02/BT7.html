@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+    <script>
+        let a = prompt("Nhập giá trị a của phương trình");
+        let b = prompt("Nhập giá trị b của phương trình");
+        let c = prompt("Nhập giá trị c của phương trình");
+        delta = b**2 - 4*a*c;
+        x1 = -b + Math.sqrt(delta)/2*a;
+        x2 = -b - Math.sqrt(delta)/2*a;
+        x0 = -b/2*a;
+        if (delta > 0){
+            alert("Phương trình có 2 nghiệm phân biệt là: " + x1 + " và " + x2);
+        }
+        else if(delta < 0){
+            alert("Phương trình vô nghiệm");
+        }
+        else  if(delta == 0){
+            alert("Phương trình có nghiệm kép là " + x0);
+        }
+    </script>
+
+</body>
+</html>

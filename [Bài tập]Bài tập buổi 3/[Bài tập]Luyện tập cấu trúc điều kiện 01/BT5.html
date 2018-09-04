@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let diemKT = prompt("Nhập điểm kiểm tra");
+        let diemGK = prompt("Nhập điểm giữa kì");
+        let diemCK = prompt("Nhập điểm cuối kì");
+        Total = parseInt(diemKT) + parseInt(diemGK) + parseInt(diemCK);
+        diemTK = Total/3;
+        if(diemTK > 8){
+            alert("Giỏi");
+        }
+        else if(diemTK > 5) {
+            alert("Khá");
+        }
+        else {
+            alert("Kém");
+        }
+
+    </script>
+
+</body>
+</html>
