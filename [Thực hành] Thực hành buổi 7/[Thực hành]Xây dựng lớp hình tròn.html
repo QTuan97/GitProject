@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Circle = function(rad,color) {
+        this.rad = rad;
+        this.color = String(color);
+        this.getRadius = function(){
+            return this.rad;
+        };
+        this.getArea = function(){
+            return Math.PI * this.rad ** 2;
+        };
+    };
+    let circle1 = new Circle(1, 'red');
+    S = circle1.getArea();
+    console.log(circle1);
+    console.log("Diện tích hình tròn này là: " + S);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width = "500" height = "300" style="border:1px solid #c3c3c3;"></canvas>
+<script>
+    let Square = function(width, height){
+        this.width = width;
+        this.height = height;
+        this.getArea = function(){
+            return this.width * this.height;
+        }
+
+        this.getPerimeter = function(){
+            return (this.width + this.height) * 2;
+        }
+
+        this.drawCanvas = function(){
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0,0,this.width,this.height);
+        }
+    };
+    let Square1 = new Square(200,100);
+    console.log(Square1.getArea());
+    console.log(Square1.getPerimeter());
+    Square1.drawCanvas();
+</script>
+</body>
+</html>

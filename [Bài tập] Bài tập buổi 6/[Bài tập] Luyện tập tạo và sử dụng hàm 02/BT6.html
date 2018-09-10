@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra nguyên âm</title>
+</head>
+<input id="in">Nhập vào 1 ký tự trong bảng chữ cái [a ~ z], [A ~ Z]
+<br>
+<button onclick= "checkChar()">Check</button>
+<body>
+<script>
+    function checkChar(){
+        let list = ['a','e','o','i','u','A','E','O','I','U'];
+        let input = document.getElementById("in").value;
+        let check = 1;
+        for( let i in list){
+            if ( input === list[i]){
+                check = 0;
+                alert(true);
+                break;
+            }
+        }
+        if (check === 1){
+            alert(false);
+        }
+    }
+</script>
+
+</body>
+</html>

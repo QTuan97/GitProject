@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temp = function(celsius){
+        this.celsius = celsius;
+        if (this.celsius < -273){
+            console.log("Không được nhỏ hơn -273");
+            return;
+        }
+        this.changetoF = function(){
+            return this.celsius * 9/5 + 32;
+        }
+        this.changetoK = function(){
+            return this.celsius + 273.15;
+        }
+    };
+    let currentTemp = new Temp(25);
+    currentF = currentTemp.changetoF();
+    currentK = currentTemp.changetoK();
+    console.log("Đổi sang độ F là: " + currentF);
+    console.log("Đổi sang độ K là: " + currentK);
+</script>
+
+</body>
+</html>

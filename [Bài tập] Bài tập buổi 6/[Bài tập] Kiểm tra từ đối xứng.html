@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id = "input"> Enter a word
+<br>
+<button onclick = "isPalindrome()">Check</button>
+<script>
+    function isPalindrome(){
+        check = 1;
+        enter = document.getElementById("input").value;
+        check_box = enter.split('');
+        if(check_box.length <= 1){
+            alert("That word is palindrome");
+            return;
+        }
+        for(let i in check_box){
+            frist = check_box.shift();
+            last = check_box.pop();
+            console.log(frist);
+            if(frist !== last){
+                check = 0;
+                alert("That word isn't palindrome");
+                return;
+            }
+        }
+        if (check === 1){
+            alert("This word is palindrome");
+        }
+
+    }
+</script>
+
+</body>
+</html>
