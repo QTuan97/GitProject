@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Nokia = function(number,amount){
+        this.number = number;
+        this.amount = amount;
+        this.list_mess = [];
+        this.sent_list = [];
+
+        this.phoneOn = function(){
+            this.amount = amount;
+        };
+        this.phoneOff = function(){
+            this.amount = 0;
+        };
+
+        this.checkPhone = function(){
+            if(this.amount > 0){
+                console.log("This phone is on");
+            }else{
+                console.log('This phone is off');
+            }
+        };
+
+        this.checkSentList = function () {
+            alert("My Nokia1 's sent message list: " + this.sent_list);
+            this.amount--;
+        };
+
+        this.chargeBattery= function(){
+            if(this.amount >= 100){
+                alert("Fully charged!");
+            }else{
+                while(this.amount < 100){
+                    this.amount++;
+                }
+            }
+        };
+
+        this.getBettery = function () {
+            console.log(this.amount);
+        };
+
+        this.sms = function (number, mess) {
+            if(this.amount > 0){
+                if (number === Iphone6.number) {
+                    console.log('Sending a message to ' + Iphone6.number);
+                    Iphone6.list_mess.push(mess);
+                    this.sent_list.push(mess);
+                    this.amount--;
+                }
+            }
+        };
+        this.checkMess = function () {
+            alert("My message: " + this.list_mess);
+            this.amount--;
+        }
+    };
+
+    let Iphone = function(number,amount){
+        this.number = number;
+        this.amount = amount;
+        this.list_mess = [];
+        this.sent_list = [];
+
+        this.phoneOn = function(){
+            this.amount = amount;
+        };
+
+        this.phoneOff = function(){
+            this.amount = 0;
+        };
+
+        this.checkPhone = function(){
+            if(this.amount > 0){
+                console.log("This phone is on");
+            }else{
+                console.log('This phone is off');
+            }
+        };
+
+        this.checkSentList = function(){
+            alert("My Iphone6's sent list " + this.sent_list);
+            this.amount--;
+        };
+
+        this.chargeBattery = function () {
+            if (this.amount >= 100) {
+                alert("Fully charged!");
+            } else {
+                while (this.amout < 100) {
+                    this.amount++;
+                }
+            }
+        };
+
+        this.getBattery = function (amount) {
+            console.log(this.amount);
+        };
+
+        this.sms = function (number, mess) {
+            if (this.amount > 0) {
+                if (number === Nokia1.num) {
+                    console.log('Sending a mess to ' + Nokia1.num);
+                    Nokia1.list_mess.push(mess);
+                    this.sent_list.push(mess);
+                    this.amount--;
+                }
+            }
+        };
+
+        this.checkMess = function () {
+            alert("My message list: " + this.list_mess);
+            this.amount--;
+        }
+    };
+    let Nokia1 = new Nokia(123,80);
+    let Iphone6 = new Iphone(456,70);
+    Nokia1.sms(456,'Hello');
+    Iphone6.checkPhone();
+    Iphone6.checkMess();
+    Nokia1.checkSentList();
+    console.log(Nokia1);
+    console.log(Iphone6);
+</script>
+</body>
+</html>
