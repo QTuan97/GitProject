@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Mouse = function(name,weight,speed, status){
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+        this.say = function(something){
+            console.log(something);
+        }
+    };
+
+    let Cat = function(name,weight,speed,get){
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.getMice = get;
+        this.chase = function(Jerry){
+            if(Jerry.speed < this.speed){
+                console.log("Got that mouse");
+                this.getMice = 'yes';
+            }else{
+                console.log("That mouse got away");
+            }
+        }
+        this.eat = function () {
+            if(this.getMice === 'yes') {
+                if(Jerry.status === 'dead'){
+                    console.log("Dead mouse, can't eat it anymore!");
+                }else if(Jerry.status === 'alive') {
+                    this.weight += Jerry.weight;
+                    console.log("Ate it and this cat's weight is " + this.weight);
+                    Jerry.status = 'dead';
+                }
+            }
+        }
+
+        this.say = function(something){
+            console.log(something);
+        }
+    }
+
+    let Jerry = new Mouse('Jerry',10,20,'alive');
+    let Tom = new Cat('Tom',10,50,'no');
+    Jerry.say('Chit chit');
+    Tom.chase(Jerry);
+    Tom.eat();
+    Tom.say('Meo meo');
+    Tom.eat();
+</script>
+</body>
+</html>
