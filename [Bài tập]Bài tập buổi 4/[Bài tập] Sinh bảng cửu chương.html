@@ -1,0 +1,26 @@
+
+<html>
+<head>
+    <title>Multiplication Table</title>
+    <meta charset="windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<script>
+    document.write("<table border='1px'>");
+    document.write("<tr style='font-size:30px;color:#fff;background-color:#000;'>");
+    for(k = 1; k<10; k++)
+    {
+        document.write("<tr style='background-color:"+"'>");
+        for(j= 1; j< 10; j++)
+        {
+            document.write("<td style='font-size:23px;'>"+j+" X "+ k + " = " + j*k + "</td>")
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
+
+</body>
+</html>
