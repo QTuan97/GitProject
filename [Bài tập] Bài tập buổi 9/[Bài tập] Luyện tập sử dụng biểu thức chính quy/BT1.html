@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let regex = /^\s*(3[01]|[12][0-9]|0?[1-9])[/](1[012]|0?[1-9])[/]((?:19|20)\d{2})\s*$/;
+    console.log(regex.test('13/12/1992'));
+    console.log(regex.test('32/12/199A'));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Đếm số lần xuất hiện chữ a
+    let str =  "Tôi yêu ngôn ngữ lập trình Javascript";
+    let char = 'a';
+    let count = 0;
+    for(i in str){
+        if(char.indexOf(str[i]) !== -1){
+            count++;
+        }
+    }
+    console.log(count);
+    //Tách chuỗi và đếm chuỗi
+    list_words = str.split(' ');
+    console.log(list_words);
+    console.log("Có tất cả " + list_words.length +' từ');
+    //Thay chữ Javascript bằng Typescript
+    let new_str = str.replace('Javascript',"Typescript");
+    console.log(new_str);
+</script>
+</body>
+</html>
