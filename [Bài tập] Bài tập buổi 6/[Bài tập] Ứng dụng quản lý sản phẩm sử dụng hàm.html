@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h><b>Add New Product</b></h>
+<br>
+<input id="input">
+<button onclick ="addField();">Add</button>
+<br>
+<h><b>Display All Product</b></h>
+<br>
+<h><b>Product name</b></h>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<h id ="number_product">0 product</h>
+<table id="myTable">
+
+</table>
+
+<script>
+    function addField (argument) {
+        let input = document.getElementById('input').value;
+        let myTable = document.getElementById("myTable");
+        let currentIndex = myTable.rows.length;
+        let currentRow = myTable.insertRow(-1);
+
+        var linksBox = document.createElement("input");
+        linksBox.setAttribute("id", "links" + currentIndex);
+        linksBox.setAttribute("readonly","readonly");
+        linksBox.setAttribute("value",input);
+
+        var Edit_button = document.createElement("input");
+        Edit_button.setAttribute("name", "keywords");
+        Edit_button.setAttribute("type","button");
+        Edit_button.setAttribute("class","button");
+        Edit_button.setAttribute("value","Edit");
+        Edit_button.setAttribute("onclick","Edit(this);");
+
+        var Remove_button = document.createElement("input");
+        Remove_button.setAttribute("name", "violationtype");
+        Remove_button.setAttribute("type","button");
+        Remove_button.setAttribute("class","button");
+        Remove_button.setAttribute("value","Remove");
+        Remove_button.setAttribute("onclick","Delete(this);");
+
+        let currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(linksBox);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(Edit_button);
+
+        currentCell = currentRow.insertCell(-1);
+        currentCell.appendChild(Remove_button);
+        if(currentIndex === 0){
+            document.getElementById('number_product').innerHTML = currentIndex + 1 + " product";
+        } else if (currentIndex > 0){
+            document.getElementById('number_product').innerHTML = currentIndex + 1 + " products";
+        }
+    }
+
+    function Delete(r){
+        let i = r.parentNode.parentNode.rowIndex;
+        document.getElementById('myTable').deleteRow(i);
+        current_number = document.getElementById('number_product').innerHTML.slice(0,1);
+        document.getElementById('number_product').innerHTML = Number(current_number) - 1 + " products";
+    }
+
+    function Edit(r){
+        let i = r.parentNode.parentNode.rowIndex;
+        //console.log(i);
+        let fix = prompt("Nhập ");
+        document.getElementById('links' + i).value = fix.toString();
+    }
+</script>
+</body>
+</html>
