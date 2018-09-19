@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Televison = function (volume) {
+        this.volume = volume;
+        let Channel_list = [1,2,3,4,5,6,7];
+        this.changeChannel = function () {
+            if(Remote1.status === 'on') {
+                for (i in Channel_list) {
+                    if (Channel_list[i] === Remote1.channel) {
+                        switch (Remote1.channel) {
+                            case 1:
+                                console.log("Đây là kênh thời tiết");
+                                break;
+                            case 2:
+                                console.log("Đây là kênh tin tức lúc 7 giờ");
+                                break;
+                            case 3:
+                                console.log("ZZZ");
+                                break;
+                            case 4:
+                                console.log("Kênh ca nhạc theo yêu cầu");
+                                break;
+                            case 5:
+                                console.log("Kênh chiếu phim hoạt hình");
+                                break;
+                            case 6:
+                                console.log("Đây là đài phát thanh tiếng nói Việt Nam");
+                                break;
+                            case 7:
+                                console.log("Chương tình hãy chọn giá đúng");
+                                break;
+                        }
+                    }
+                }
+            }
+            else if(Remote1.status === 'off'){
+                console.log("PLease turn on this tivi frist!");
+            }
+
+        }
+
+        this.checkStatus = function(){
+            if(Remote1.status === 'on'){
+                console.log("This tivi is turned on!");
+            }else if(Remote1.status === 'off'){
+                console.log('This tivi is turned off!');
+            }
+        }
+    }
+
+    let Remote = function(status,channel){
+        this.status = status;
+        this.channel = channel;
+        this.getChannel = function (channel) {
+            console.log("Change to channel " + this.channel);
+        }
+        this.getVolume = function () {
+            if(Remote1.status === 'on') {
+                console.log("Current volume is " + Tivi.volume);
+            }
+            else if(Remote1.status = 'off'){
+                console.log("This tivi is off!");
+            }
+        }
+        this.changeVolume = function(change_vol){
+            this.change_vol = change_vol;
+            Tivi.volume = this.change_vol;
+        }
+    }
+
+    let Tivi = new Televison(65);
+    let Remote1 = new Remote('on',7);
+    Tivi.checkStatus();
+    Remote1.getChannel(1);
+    Tivi.changeChannel();
+    Remote1.getVolume();
+    Remote1.changeVolume(67);
+    Remote1.getVolume();
+    Remote1.status = 'off';
+    Tivi.checkStatus();
+</script>
+</body>
+</html>
