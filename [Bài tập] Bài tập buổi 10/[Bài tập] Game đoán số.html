@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let input = prompt("Nhập vào tổng số phần tử của mảng");
+let randomArray = [];
+function getRandomArray(){
+    for(i = 0; i <= input; i++){
+        randomArray.push(i);
+    };
+}
+
+function guess_Game(arr){
+    guess = prompt("Bạn đoán số mấy ?");
+    let win_num = arr[Math.floor(Math.random() * input)];
+    if(guess === win_num){
+        alert("You win");
+    }else{
+        let retry = prompt("Đoán lại xem");
+        guess = retry;
+        if(guess = win_num){
+            alert("You win");
+        }
+        else{
+            alert("You lose");
+        }
+        }
+    }
+getRandomArray();
+guess_Game(randomArray);
+</script>
+</body>
+</html>
